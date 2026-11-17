@@ -1,0 +1,19 @@
+# real-sounding speech (two Windows system voices), word timings from the synthesiser
+video: ../fixtures/real_speech.mp4
+steps:
+- say: Add a caption 'Welcome!' when I say welcome to the channel
+  expect: {status: applied}
+- say: Cut the first 5 seconds
+  expect: {status: applied}
+- say: Remove the part about pricing
+  answer: the second one
+  expect_first: {status: needs_clarification}
+  expect: {status: applied}
+- say: remove filler words
+  expect: {status: applied}
+- say: bleep the word 'darn'
+  expect: {status: applied}
+- say: Undo
+  expect: {status: applied}
+- say: render
+  expect: {status: applied}
