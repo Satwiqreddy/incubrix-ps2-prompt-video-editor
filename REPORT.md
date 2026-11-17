@@ -35,5 +35,9 @@
 * OTIO export: opened successfully with OpenTimelineIO 0.18.1 (tracks, clip ranges, speed effect); not opened in a desktop editor.
 * 60-minute: a real 60-minute MP4 (160x90, silent noise) with a synthetic transcript was edited through the HTTP API (median 143 ms, max 254 ms, 30/30 < 3 s); it was not rendered, and rendering time for 60 minutes was not measured.
 
+## Found and fixed during final checks
+* Render dropped the audio of later segments for 16 kHz mono sources (ffmpeg's implicit stream fan-out); fixed with explicit `split`/`asplit`, covered by `tests/test_media.py::test_16khz_mono_source_keeps_all_audio`, and the session runner now fails any render outside the 1-frame tolerance.
+* Cut/move boundaries inside a word were not snapped for `move`; now they are (0 of 140 boundaries clip a word).
+
 ## Next
 Real-speech fixtures + whisper test; diarization adapter; embedding-based topic search; custom music upload; per-segment render cache for faster re-renders; load test and render queue limits; validate OTIO in Resolve/OTIO.
