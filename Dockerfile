@@ -8,6 +8,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # download the speech model at build time so the first upload is not slow and needs no internet
 ENV HF_HOME=/models
 RUN python -c "from faster_whisper import WhisperModel; WhisperModel('base.en', compute_type='int8')"
+# some hosts (e.g. Hugging Face Spaces) run the container as a non-root user: let it read the model and write state
+RUN mkdir -p /data /models && chmod -R a+rwX /data /models
 COPY . .
 # sample videos for the web page and the tests (our own synthetic media, ~30 s to generate)
 RUN python -m tools.fixtures fixtures && python -m tools.make_sessions
