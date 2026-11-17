@@ -1,0 +1,49 @@
+# docker compose up                      -> API on :8000 (docs at /docs) + MinIO (S3) on :9000/:9001, SQLite state in a volume
+# docker compose run --rm tests          -> ALL tests with no API keys: unit + integration (HTTP) + render e2e + 18 scripted sessions
+services:
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${S3_ACCESS_KEY:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${S3_SECRET_KEY:-minioadmin}
+    ports: ["9000:9000", "9001:9001"]
+    volumes: ["minio:/data"]
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      retries: 12
+
+  api:
+    build: .
+    depends_on:
+      minio: {condition: service_healthy}
+    ports: ["8000:8000"]
+    volumes: ["state:/data"]
+    environment:
+      DATA_DIR: /data
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8000}
+      API_TOKEN: ${API_TOKEN:-}
+      RATE_LIMIT_PER_MIN: ${RATE_LIMIT_PER_MIN:-120}
+      TRANSCRIBER: ${TRANSCRIBER:-auto}
+      NLU: ${NLU:-rules}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      STORAGE: s3
+      S3_ENDPOINT: http://minio:9000
+      S3_PUBLIC_ENDPOINT: ${S3_PUBLIC_ENDPOINT:-http://localhost:9000}
+      S3_BUCKET: ${S3_BUCKET:-incubrix-editor}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-minioadmin}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-minioadmin}
+      CALLBACK_SECRET: ${CALLBACK_SECRET:-change-me}
+      FONT_PATH: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+
+  tests:
+    build: .
+    profiles: ["test"]
+    environment: {JOBS_INLINE: "1", RATE_LIMIT_PER_MIN: "0", DATA_DIR: /tmp/data}
+    command: >
+      sh -c "python -m tools.fixtures fixtures && python -m tools.make_sessions
+      && pytest -q -p no:cacheprovider
+      && python -m app.runner sessions -o /tmp/results"
+
+volumes: {state: {}, minio: {}}
