@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://incubrix.example/schemas/timeline-1.json",
+  "title": "IncuBrix edited timeline (derived view)",
+  "description": "Derived from the untouched source + the edit history. Every edit is anchored to ORIGINAL source time / transcript word ids, never to a position in the edited video; this view is recomputed after every instruction.",
+  "type": "object",
+  "required": ["schema", "duration_s", "segments", "captions", "mutes", "bleeps", "music", "warnings"],
+  "properties": {
+    "schema": {"const": "incubrix.timeline/1"},
+    "duration_s": {"type": "number", "minimum": 0},
+    "segments": {
+      "description": "Ordered pieces of the ORIGINAL video that make up the edit (cuts remove pieces, move re-orders them, speed sets a factor).",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["src_start", "src_end", "speed", "out_start", "out_end"],
+        "properties": {
+          "src_start": {"type": "number"}, "src_end": {"type": "number"},
+          "speed": {"type": "number", "exclusiveMinimum": 0},
+          "out_start": {"type": "number"}, "out_end": {"type": "number"}
+        }
+      }
+    },
+    "captions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text", "words", "style", "intervals", "hidden"],
+        "properties": {
+          "id": {"type": "string"}, "text": {"type": "string"},
+          "words": {"description": "[first_word_id, last_word_id] in the transcript: the ANCHOR", "type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+          "style": {"type": "object", "properties": {"color": {"type": "string"}, "scale": {"type": "number"}}},
+          "intervals": {"description": "where it shows in the CURRENT video (derived, recomputed after every edit)", "type": "array", "items": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}},
+          "hidden": {"description": "true when all anchor words are cut; returns if the cut is restored", "type": "boolean"}
+        }
+      }
+    },
+    "mutes": {"type": "array", "items": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}},
+    "bleeps": {"type": "array", "items": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2}},
+    "music": {"oneOf": [{"type": "null"}, {"type": "object", "required": ["gain_db", "duck_db"], "properties": {"gain_db": {"type": "number"}, "duck_db": {"type": "number"}, "track": {"type": ["string", "null"]}}}]},
+    "protected_pauses_after_word": {"type": "array", "items": {"type": "integer"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "source": {"type": "object"}
+  }
+}
