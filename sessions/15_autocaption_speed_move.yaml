@@ -1,0 +1,21 @@
+# scripted session: 15_autocaption_speed_move
+video: ../fixtures/single.mp4
+steps:
+- say: auto-caption the whole video
+  expect:
+    status: applied
+- say: speed up from 1:00 to 1:30 by 2x
+  expect:
+    status: applied
+- say: move 0:40-0:50 to the end
+  expect:
+    status: applied
+- say: make that caption red
+  answer: all captions
+  expect:
+    status: applied
+  expect_first:
+    status: needs_clarification
+- say: render
+  expect:
+    status: applied

@@ -1,0 +1,12 @@
+# scripted session: 13_variable_frame_rate
+video: ../fixtures/vfr.mp4
+steps:
+- say: cut the first 100 seconds
+  expect:
+    status: applied
+- say: add a caption 'VFR' when I say darn
+  expect:
+    status: applied
+- say: render
+  expect:
+    status: applied

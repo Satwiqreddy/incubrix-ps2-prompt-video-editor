@@ -1,0 +1,24 @@
+# scripted session: 05_repeat_and_impossible
+video: ../fixtures/single.mp4
+steps:
+- say: remove 0:30-0:40
+  expect:
+    status: applied
+- say: remove 0:30-0:40
+  answer: 'no'
+  expect:
+    status: rejected
+  expect_first:
+    status: needs_clarification
+- say: speed up 10x
+  expect:
+    status: rejected
+- say: cut everything
+  expect:
+    status: rejected
+- say: cut the first 5 seconds, speed up 1:00 to 1:10 by 10x and mute 'darn'
+  expect:
+    status: applied
+- say: render
+  expect:
+    status: applied

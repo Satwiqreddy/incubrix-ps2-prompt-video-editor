@@ -1,0 +1,22 @@
+# scripted session: 03_reorder_mute_filler
+video: ../fixtures/single.mp4
+steps:
+- say: move 0:10-0:20 to the end
+  expect:
+    status: applied
+    duration_s: 150.0
+- say: mute the word 'coffee'
+  expect:
+    status: applied
+- say: bleep the word 'darn'
+  expect:
+    status: applied
+- say: remove filler words
+  expect:
+    status: applied
+- say: remove filler words
+  expect:
+    status: rejected
+- say: render
+  expect:
+    status: applied

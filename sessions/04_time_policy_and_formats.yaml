@@ -1,0 +1,21 @@
+# scripted session: 04_time_policy_and_formats
+video: ../fixtures/single.mp4
+steps:
+- say: cut from 80 seconds to a minute twenty five
+  expect:
+    status: applied
+- say: cut the last 10 seconds
+  expect:
+    status: applied
+- say: add a caption 'x' at 5:00
+  expect:
+    status: rejected
+- say: cut 0:00-0:10 in the original
+  expect:
+    status: applied
+- say: speed up from 1:20 to 1:30 by 2x
+  expect:
+    status: applied
+- say: render
+  expect:
+    status: applied

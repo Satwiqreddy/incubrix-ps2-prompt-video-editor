@@ -1,0 +1,19 @@
+# scripted session: 16_low_confidence_bleep
+video: ../fixtures/single.mp4
+steps:
+- say: bleep the word 'darn'
+  answer: only the confident
+  expect:
+    status: rejected
+  expect_first:
+    status: needs_clarification
+- say: bleep the word 'darn'
+  answer: all, including low-confidence
+  expect:
+    status: applied
+  expect_first:
+    status: needs_clarification
+- say: render
+  expect:
+    status: applied
+transcript: ../fixtures/lowconf.words.json

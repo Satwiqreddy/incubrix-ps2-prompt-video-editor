@@ -1,0 +1,25 @@
+# scripted session: 17_conflicts
+video: ../fixtures/single.mp4
+steps:
+- say: remove the part about pricing
+  answer: all of them
+  expect:
+    status: applied
+  expect_first:
+    status: needs_clarification
+- say: remove the part about pricing
+  expect:
+    status: rejected
+- say: put back the pricing part
+  answer: all of them
+  expect:
+    status: applied
+- say: remove silences longer than 60 seconds
+  expect:
+    status: rejected
+- say: sing me a song
+  expect:
+    status: rejected
+- say: render
+  expect:
+    status: applied

@@ -1,0 +1,36 @@
+# scripted session: 18_stress_many_edits
+video: ../fixtures/single.mp4
+steps:
+- say: remove filler words
+  expect:
+    status: applied
+- say: remove silences longer than 1 second
+  expect:
+    status: applied
+- say: cut 0:10-0:12
+  expect:
+    status: applied
+- say: cut 0:20-0:23
+  expect:
+    status: applied
+- say: speed up from 0:30 to 0:40 by 1.5x
+  expect:
+    status: applied
+- say: move 0:50-0:55 to the start
+  expect:
+    status: applied
+- say: add a caption 'Many cuts' when I say growth
+  answer: all of them
+  expect:
+    status: applied
+  expect_first:
+    status: needs_clarification
+- say: mute the word 'hello'
+  expect:
+    status: applied
+- say: add background music
+  expect:
+    status: applied
+- say: render
+  expect:
+    status: applied

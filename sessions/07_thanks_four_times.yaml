@@ -1,0 +1,12 @@
+# scripted session: 07_thanks_four_times
+video: ../fixtures/single.mp4
+steps:
+- say: remove everything after I say thanks
+  answer: the last one
+  expect:
+    status: applied
+  expect_first:
+    status: needs_clarification
+- say: render
+  expect:
+    status: applied

@@ -1,0 +1,15 @@
+# scripted session: 14_no_audio
+video: ../fixtures/noaudio.mp4
+steps:
+- say: mute the word 'coffee'
+  expect:
+    status: rejected
+- say: add a caption 'silent film' when I say coffee
+  expect:
+    status: applied
+- say: cut the first 100 seconds
+  expect:
+    status: applied
+- say: render
+  expect:
+    status: applied

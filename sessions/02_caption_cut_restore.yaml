@@ -1,0 +1,17 @@
+# scripted session: 02_caption_cut_restore
+video: ../fixtures/single.mp4
+steps:
+- say: add a caption 'Let us plan' when I say let us begin with planning
+  expect:
+    status: applied
+    duration_s: 150.0
+- say: remove 0:45-0:52
+  expect:
+    status: applied
+- say: put back what I removed
+  expect:
+    status: applied
+    duration_s: 150.0
+- say: render
+  expect:
+    status: applied

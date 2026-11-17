@@ -1,0 +1,15 @@
+# scripted session: 12_two_speakers_captions
+video: ../fixtures/two_speakers.mp4
+steps:
+- say: auto-caption the whole video
+  expect:
+    status: applied
+- say: caption the whole video
+  expect:
+    status: rejected
+- say: remove the part about price
+  expect:
+    status: applied
+- say: render
+  expect:
+    status: applied

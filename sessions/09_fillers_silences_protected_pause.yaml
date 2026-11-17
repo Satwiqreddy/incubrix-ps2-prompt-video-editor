@@ -1,0 +1,16 @@
+# scripted session: 09_fillers_silences_protected_pause
+video: ../fixtures/single.mp4
+steps:
+- say: keep the pause after 'Thanks.'
+  expect:
+    status: applied
+- say: remove silences longer than 2 seconds
+  expect:
+    status: applied
+    duration_s: 104.9
+- say: remove filler words
+  expect:
+    status: applied
+- say: render
+  expect:
+    status: applied

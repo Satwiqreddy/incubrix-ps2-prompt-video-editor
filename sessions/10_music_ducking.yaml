@@ -1,0 +1,12 @@
+# scripted session: 10_music_ducking
+video: ../fixtures/single.mp4
+steps:
+- say: cut the first 90 seconds
+  expect:
+    status: applied
+- say: add background music
+  expect:
+    status: applied
+- say: render
+  expect:
+    status: applied

@@ -1,0 +1,33 @@
+# scripted session: 06_undo_redo_restore
+video: ../fixtures/single.mp4
+steps:
+- say: add background music
+  expect:
+    status: applied
+- say: cut 0:10-0:20
+  expect:
+    status: applied
+    duration_s: 140.2
+- say: cut 0:50-0:60
+  expect:
+    status: applied
+    duration_s: 130.2
+- say: undo the second-to-last cut but keep the music
+  expect:
+    status: applied
+    duration_s: 140.0
+- say: undo
+  expect:
+    status: applied
+- say: redo
+  expect:
+    status: applied
+- say: cut 0:00-0:05
+  expect:
+    status: applied
+- say: redo
+  expect:
+    status: rejected
+- say: render
+  expect:
+    status: applied

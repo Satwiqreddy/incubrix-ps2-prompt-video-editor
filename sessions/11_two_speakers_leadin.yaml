@@ -1,0 +1,12 @@
+# scripted session: 11_two_speakers_leadin
+video: ../fixtures/two_speakers.mp4
+steps:
+- say: remove everything the guest says about free lunch
+  answer: both the question and the answer
+  expect:
+    status: applied
+  expect_first:
+    status: needs_clarification
+- say: render
+  expect:
+    status: applied

@@ -1,0 +1,33 @@
+# scripted session: 08_vague_references
+video: ../fixtures/single.mp4
+steps:
+- say: remove the boring bit
+  answer: the longest pause
+  expect:
+    status: applied
+  expect_first:
+    status: needs_clarification
+- say: make it shorter
+  answer: remove filler words
+  expect:
+    status: applied
+  expect_first:
+    status: needs_clarification
+- say: make it bigger
+  expect:
+    status: rejected
+- say: add a caption 'Hi' at 0:20
+  expect:
+    status: applied
+- say: add a caption 'Bye' at 1:30
+  expect:
+    status: applied
+- say: make that caption red
+  answer: the last one
+  expect:
+    status: applied
+  expect_first:
+    status: needs_clarification
+- say: render
+  expect:
+    status: applied

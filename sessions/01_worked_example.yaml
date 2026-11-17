@@ -1,0 +1,21 @@
+# The 8-step worked example from the brief, on our own test video.
+video: ../fixtures/single.mp4
+steps:
+  - say: "Add a caption 'Welcome!' when I say welcome to the channel"
+    expect: {status: applied, duration_s: 150.0}
+  - say: "Cut the first 30 seconds"
+    expect: {status: applied, duration_s: 120.0}
+  - say: "Remove the part about pricing"
+    answer: "the second one"
+    expect_first: {status: needs_clarification}
+    expect: {status: applied, duration_s: 107.0}
+  - say: "Speed up from 1:00 to 1:30 by 2x"
+    expect: {status: applied, duration_s: 92.0}
+  - say: "Actually, put the intro back"
+    expect: {status: applied, duration_s: 122.0}
+  - say: "Undo"
+    expect: {status: applied, duration_s: 92.0}
+  - say: "Make that caption red"
+    expect: {status: applied, duration_s: 92.0}
+  - say: "render"
+    expect: {status: applied}
