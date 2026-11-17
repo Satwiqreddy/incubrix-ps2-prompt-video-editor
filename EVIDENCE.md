@@ -3,6 +3,7 @@
 Run first: `python -m tools.fixtures fixtures && python -m pytest -q && python -m app.runner sessions -o session_pack && python -m tools.metrics && python -m tools.bench`
 
 ## Must-haves
+(Counts below were re-measured on the final code: 135 tests; 19 scripted sessions; 0 of 140 cut/move boundaries inside a word; render ≤ 0.9 frame.)
 | # | Status | Proof |
 |---|---|---|
 | 1 Never damage original | Yes | `tests/test_api.py::test_full_flow_and_original_untouched` (`source_unchanged`), `tests/test_media.py::test_render_never_modifies_source`; every `results.json` has `source_sha256` + `source_unchanged: true` |
@@ -42,5 +43,16 @@ Partial: Whisper `base.en` transcribes uploads without a transcript file (checke
 ## Hard cases tab
 Scenarios in `tests/test_scenarios.py` + sessions 02–08, 11–14, 17 (all 8 hard-case bullets of the brief are covered; two-speaker swap/overlap only as warnings).
 
-## Still to do by the submitter (I could not do these)
-1. Fill the Excel form from this file (the template was not provided to me). 2. Private GitHub repo with real commit history, reviewer `techteam@incubrix.com`. 3. Deploy a live demo (any host that runs the Dockerfile; set `API_TOKEN`, keep `RATE_LIMIT_PER_MIN`, upload fixtures or your own video + words.json) and keep it up. 4. Record the ≤8-min unedited demo (`DEMO_SCRIPT.md`). 5. Run `docker compose up` / `docker compose run --rm tests` once on a Docker machine and fix anything that differs. 6. Add your own real talking-head clip + transcript and re-run. 7. Rewrite `AI_USE.md` in your own words. 8. Be ready to explain and change every file in the live session.
+## Delivered
+* Private GitHub repository `Satwiqreddy/incubrix-ps2-prompt-video-editor`, 28+ commits under the submitter's own name (real dates, no backdating).
+* `DEPLOY.md` (live demo), `README.md`, `openapi.yaml`, `REPORT.md`, `SOURCES.md`, `AI_USE.md`, `TIMELINE.md` + `schema/`, session pack (`session_pack/*/results.json`, `timeline.json`), metrics and benchmark JSON files, 135 tests.
+
+## Still to do by the submitter (cannot be done from the code)
+1. Fill the Excel form from this file (the template was not provided).
+2. Give `techteam@incubrix.com` reviewer access: GitHub needs a username for API invites, so use Settings → Collaborators → Add people (an email is accepted there), or ask IncuBrix for their GitHub username.
+3. Deploy the live demo (`DEPLOY.md`), put the URL and token in the form, keep it up until results.
+4. Record the ≤ 8-minute unedited demo video (`DEMO_SCRIPT.md`).
+5. Run `docker compose up` and `docker compose run --rm tests` once on a machine with Docker (never run here), and push once so GitHub Actions runs (`.github/workflows/ci.yml`).
+6. Test one real recording of yourself (video only, let Whisper transcribe) and add it to the evidence.
+7. Rewrite `AI_USE.md` in your own words.
+8. Be ready to explain and change every file in the live session.
