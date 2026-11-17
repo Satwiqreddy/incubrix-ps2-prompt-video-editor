@@ -1,0 +1,22 @@
+{
+ "determinism": {
+  "sessions": 19,
+  "identical_hash_sequences": 19,
+  "pct": 100.0,
+  "method": "3 in-process runs + 2 processes with PYTHONHASHSEED=1/12345"
+ },
+ "word_clipping": {
+  "cut_boundaries_checked": 140,
+  "clipping_a_word": 0
+ },
+ "render_accuracy": {
+  "renders": 19,
+  "max_av_offset_frames": 0.9,
+  "max_length_diff_frames": 0.9
+ },
+ "clarification": {
+  "questions_asked": 13,
+  "assumptions_stated": 0,
+  "guessed_on_destructive": 0
+ }
+}

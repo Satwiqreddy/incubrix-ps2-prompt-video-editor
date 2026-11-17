@@ -1,0 +1,29 @@
+{
+ "video_minutes": 60,
+ "video_file_mb": 12.3,
+ "words": 7426,
+ "instructions": 30,
+ "median_ms": 143,
+ "p95_ms": 188,
+ "max_ms": 254,
+ "under_3s": 30,
+ "ingest_s": 2.2,
+ "slowest": [
+  [
+   254,
+   "add a caption 'Hi' when I say growth plan",
+   "applied"
+  ],
+  [
+   235,
+   "make it shorter",
+   "needs_clarification"
+  ],
+  [
+   188,
+   "put back what I removed",
+   "applied"
+  ]
+ ],
+ "note": "latency measured through the HTTP API (JSON parse of the transcript and session included); ingest and render excluded"
+}

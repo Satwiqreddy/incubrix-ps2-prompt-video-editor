@@ -1,0 +1,46 @@
+[
+ {
+  "minutes": 5,
+  "words": 625,
+  "history_entries": 26,
+  "median_ms": 5.6,
+  "p95_ms": 18.2,
+  "max_ms": 20.1,
+  "slowest": [
+   [
+    20.1,
+    "speed"
+   ],
+   [
+    18.2,
+    "move"
+   ],
+   [
+    10.2,
+    "cut range"
+   ]
+  ]
+ },
+ {
+  "minutes": 60,
+  "words": 7426,
+  "history_entries": 23,
+  "median_ms": 67.3,
+  "p95_ms": 105.1,
+  "max_ms": 106.8,
+  "slowest": [
+   [
+    106.8,
+    "topic (asks)"
+   ],
+   [
+    105.1,
+    "silences"
+   ],
+   [
+    101.7,
+    "undo"
+   ]
+  ]
+ }
+]
