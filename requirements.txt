@@ -1,0 +1,14 @@
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+httpx>=0.27
+pydantic>=2
+PyYAML>=6
+boto3>=1.34
+jsonschema>=4
+pytest>=8
+numpy>=1.26
+# bundled ffmpeg binary (local dev only; Docker uses apt ffmpeg)
+imageio-ffmpeg>=0.5
+faster-whisper>=1.0   # speech-to-text (MIT); model weights download on first use
+moto[s3]>=5

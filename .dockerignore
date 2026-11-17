@@ -1,0 +1,10 @@
+data/
+data_*/
+out/
+results/
+session_pack/
+__pycache__/
+.git/
+.env
+fixtures/real_speech.*
+*.tar.gz
