@@ -1,0 +1,83 @@
+{
+ "schema": "incubrix.timeline/1",
+ "duration_s": 140.233,
+ "segments": [
+  {
+   "src_start": 0.0,
+   "src_end": 6.467,
+   "speed": 1.0,
+   "out_start": 0.0,
+   "out_end": 6.467
+  },
+  {
+   "src_start": 7.433,
+   "src_end": 29.233,
+   "speed": 1.0,
+   "out_start": 6.467,
+   "out_end": 28.267
+  },
+  {
+   "src_start": 30.433,
+   "src_end": 100.4,
+   "speed": 1.0,
+   "out_start": 28.267,
+   "out_end": 98.233
+  },
+  {
+   "src_start": 108.0,
+   "src_end": 150.0,
+   "speed": 1.0,
+   "out_start": 98.233,
+   "out_end": 140.233
+  }
+ ],
+ "captions": [
+  {
+   "id": "cap3_0",
+   "text": "Hi",
+   "words": [
+    39,
+    40
+   ],
+   "style": {},
+   "intervals": [
+    [
+     22.033,
+     22.893
+    ]
+   ],
+   "hidden": false
+  },
+  {
+   "id": "cap4_0",
+   "text": "Bye",
+   "words": [
+    129,
+    135
+   ],
+   "style": {
+    "color": "red"
+   },
+   "intervals": [
+    [
+     89.833,
+     92.993
+    ]
+   ],
+   "hidden": false
+  }
+ ],
+ "mutes": [],
+ "bleeps": [],
+ "music": null,
+ "protected_pauses_after_word": [],
+ "warnings": [],
+ "source": {
+  "sha256": "ba5374926fc65c7f9310eabce4f32de57b28fdf22eb788e8674d6b0d3ce29d5e",
+  "duration_s": 150.0,
+  "fps": 30.0,
+  "width": 640,
+  "height": 360,
+  "has_audio": true
+ }
+}

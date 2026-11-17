@@ -1,0 +1,27 @@
+{
+ "schema": "incubrix.timeline/1",
+ "duration_s": 150.0,
+ "segments": [
+  {
+   "src_start": 0.0,
+   "src_end": 150.0,
+   "speed": 1.0,
+   "out_start": 0.0,
+   "out_end": 150.0
+  }
+ ],
+ "captions": [],
+ "mutes": [],
+ "bleeps": [],
+ "music": null,
+ "protected_pauses_after_word": [],
+ "warnings": [],
+ "source": {
+  "sha256": "ba5374926fc65c7f9310eabce4f32de57b28fdf22eb788e8674d6b0d3ce29d5e",
+  "duration_s": 150.0,
+  "fps": 30.0,
+  "width": 640,
+  "height": 360,
+  "has_audio": true
+ }
+}

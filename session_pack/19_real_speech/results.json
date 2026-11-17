@@ -1,0 +1,317 @@
+{
+ "name": "19_real_speech",
+ "session_id": "ses_cc7bb5da6a",
+ "video_id": "vid_98d9f9a514",
+ "source_sha256": "86b86e80338305ca930d25601771d72db11829eb3479191640659e08d818465c",
+ "source_unchanged": true,
+ "steps": [
+  {
+   "step": 1,
+   "say": "Add a caption 'Welcome!' when I say welcome to the channel",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "caption",
+     "text": "Welcome!",
+     "words": [
+      2,
+      5
+     ]
+    }
+   ],
+   "summary": "Duration 60.83s -> 60.83s (+0.00s). caption \u201cWelcome!\u201d attached to 4 word(s) \u201cwelcome to the channel.\u201d (original time 0:01.7\u20130:03.4)",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "f8c0e9ca6f7afad3",
+   "duration_s": 60.83,
+   "time_policy": "current",
+   "latency_ms": 17
+  },
+  {
+   "step": 2,
+   "say": "Cut the first 5 seconds",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "cut",
+     "src": [
+      0.0,
+      5.0667
+     ]
+    }
+   ],
+   "summary": "Duration 60.83s -> 55.76s (-5.07s). boundary 0:05.0 was inside the word 'I'; moved to 0:05.1 (nearest silence) time policy: current timeline",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [
+    "caption 'Welcome!' hidden: its words are cut"
+   ],
+   "timeline_hash": "95f9861397619a04",
+   "duration_s": 55.763,
+   "time_policy": "current",
+   "latency_ms": 17
+  },
+  {
+   "step": 3,
+   "say": "Remove the part about pricing",
+   "status": "needs_clarification",
+   "operations": [],
+   "summary": "Nothing applied yet.",
+   "question": "\u201cpricing\u201d appears 3 times. Which one, or all?",
+   "options": [
+    "0:12.4\u20130:14.5 \u201cLet us talk about pricing.\u201d",
+    "0:19.2\u20130:26.3 \u201cWell, we started with a low price, and then we raised the p\u2026\u201d",
+    "0:46.5\u20130:53.0 \u201cStart small, talk to customers every week, and keep the pri\u2026\u201d",
+    "all of them"
+   ],
+   "reason": null,
+   "warnings": [
+    "caption 'Welcome!' hidden: its words are cut"
+   ],
+   "timeline_hash": "95f9861397619a04",
+   "duration_s": 55.763,
+   "time_policy": "current",
+   "latency_ms": 18,
+   "answer": {
+    "said": "the second one",
+    "status": "applied",
+    "operations": [
+     {
+      "op": "cut",
+      "src": [
+       24.2333,
+       31.3333
+      ]
+     }
+    ],
+    "summary": "Duration 55.76s -> 48.66s (-7.10s). you chose: 0:19.2\u20130:26.3 \u201cWell, we started with a low price, and then we raised the p\u2026\u201d",
+    "reason": null,
+    "warnings": [
+     "caption 'Welcome!' hidden: its words are cut"
+    ],
+    "timeline_hash": "c329b13b21821e05",
+    "duration_s": 48.663
+   }
+  },
+  {
+   "step": 4,
+   "say": "remove filler words",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "cut",
+     "src": [
+      10.5333,
+      11.7667
+     ]
+    },
+    {
+     "op": "cut",
+     "src": [
+      38.6,
+      40.5
+     ]
+    }
+   ],
+   "summary": "Duration 48.66s -> 45.53s (-3.13s). removed 2 filler words: Uh, Um",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [
+    "caption 'Welcome!' hidden: its words are cut"
+   ],
+   "timeline_hash": "7a3f6e9a2dc37698",
+   "duration_s": 45.53,
+   "time_policy": "current",
+   "latency_ms": 15
+  },
+  {
+   "step": 5,
+   "say": "bleep the word 'darn'",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "bleep",
+     "words": [
+      90,
+      90
+     ]
+    }
+   ],
+   "summary": "Duration 45.53s -> 45.53s (+0.00s). bleeped 1 occurrence(s) at 0:29.5",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [
+    "caption 'Welcome!' hidden: its words are cut"
+   ],
+   "timeline_hash": "2d05c3eda89c9763",
+   "duration_s": 45.53,
+   "time_policy": "current",
+   "latency_ms": 21
+  },
+  {
+   "step": 6,
+   "say": "Undo",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "undo",
+     "entry": 5,
+     "instruction": "bleep the word 'darn'"
+    }
+   ],
+   "summary": "Duration 45.53s -> 45.53s (-0.00s). Reversed step 5 (\u201cbleep the word 'darn'\u201d) only.",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [
+    "caption 'Welcome!' hidden: its words are cut"
+   ],
+   "timeline_hash": "7a3f6e9a2dc37698",
+   "duration_s": 45.53,
+   "time_policy": "current",
+   "latency_ms": 17
+  },
+  {
+   "step": 7,
+   "say": "render",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "render"
+    }
+   ],
+   "summary": "Render requested (see render job).",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [
+    "caption 'Welcome!' hidden: its words are cut"
+   ],
+   "timeline_hash": "7a3f6e9a2dc37698",
+   "duration_s": 45.53,
+   "time_policy": "current",
+   "latency_ms": 17,
+   "render": {
+    "job_id": "d3fd07f114264dd7",
+    "kind": "render",
+    "status": "succeeded",
+    "progress": 100,
+    "result": {
+     "video_url": "http://localhost:8000/api/v1/files/ses_cc7bb5da6a/d3fd07f114264dd7/video.mp4",
+     "timeline_url": "http://localhost:8000/api/v1/files/ses_cc7bb5da6a/d3fd07f114264dd7/timeline.json",
+     "otio_url": "http://localhost:8000/api/v1/files/ses_cc7bb5da6a/d3fd07f114264dd7/timeline.otio",
+     "timeline_hash": "7a3f6e9a2dc37698",
+     "verification": {
+      "video_s": 45.5,
+      "audio_s": 45.53,
+      "frames": 1365,
+      "expected_s": 45.53,
+      "length_diff_frames": 0.9,
+      "av_offset_frames": 0.9
+     },
+     "manifest": {
+      "stage": "render",
+      "tool": "ffmpeg",
+      "settings": {
+       "codec": "libx264/aac",
+       "crf": 23,
+       "fps": 30.0
+      },
+      "seed": null,
+      "seconds": 6.23,
+      "cost_usd": 0.0,
+      "warnings": [
+       "caption 'Welcome!' hidden: its words are cut"
+      ],
+      "ai_generated": false,
+      "licence": "source media is the user's; built-in music is a synthetic chord pad generated by this service (no third-party audio)",
+      "music_label": null
+     }
+    },
+    "error": null,
+    "links": {
+     "self": "http://localhost:8000/api/v1/jobs/d3fd07f114264dd7"
+    },
+    "verification": {
+     "video_s": 45.5,
+     "audio_s": 45.53,
+     "frames": 1365,
+     "expected_s": 45.53,
+     "length_diff_frames": 0.9,
+     "av_offset_frames": 0.9
+    }
+   }
+  }
+ ],
+ "final_timeline_hash": "7a3f6e9a2dc37698",
+ "final_duration_s": 45.53,
+ "final_timeline": {
+  "schema": "incubrix.timeline/1",
+  "duration_s": 45.53,
+  "segments": [
+   {
+    "src_start": 5.067,
+    "src_end": 10.533,
+    "speed": 1.0,
+    "out_start": 0.0,
+    "out_end": 5.467
+   },
+   {
+    "src_start": 11.767,
+    "src_end": 24.233,
+    "speed": 1.0,
+    "out_start": 5.467,
+    "out_end": 17.933
+   },
+   {
+    "src_start": 31.333,
+    "src_end": 38.6,
+    "speed": 1.0,
+    "out_start": 17.933,
+    "out_end": 25.2
+   },
+   {
+    "src_start": 40.5,
+    "src_end": 60.83,
+    "speed": 1.0,
+    "out_start": 25.2,
+    "out_end": 45.53
+   }
+  ],
+  "captions": [
+   {
+    "id": "cap1_0",
+    "text": "Welcome!",
+    "words": [
+     2,
+     5
+    ],
+    "style": {},
+    "intervals": [],
+    "hidden": true
+   }
+  ],
+  "mutes": [],
+  "bleeps": [],
+  "music": null,
+  "protected_pauses_after_word": [],
+  "warnings": [
+   "caption 'Welcome!' hidden: its words are cut"
+  ],
+  "source": {
+   "sha256": "86b86e80338305ca930d25601771d72db11829eb3479191640659e08d818465c",
+   "duration_s": 60.83,
+   "fps": 30.0,
+   "width": 640,
+   "height": 360,
+   "has_audio": true
+  }
+ },
+ "final_video": "final.mp4",
+ "expectation_failures": []
+}

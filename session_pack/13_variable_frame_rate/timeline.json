@@ -1,0 +1,44 @@
+{
+ "schema": "incubrix.timeline/1",
+ "duration_s": 49.97,
+ "segments": [
+  {
+   "src_start": 100.0,
+   "src_end": 149.97,
+   "speed": 1.0,
+   "out_start": 0.0,
+   "out_end": 49.97
+  }
+ ],
+ "captions": [
+  {
+   "id": "cap2_0",
+   "text": "VFR",
+   "words": [
+    164,
+    164
+   ],
+   "style": {},
+   "intervals": [
+    [
+     24.0,
+     24.7
+    ]
+   ],
+   "hidden": false
+  }
+ ],
+ "mutes": [],
+ "bleeps": [],
+ "music": null,
+ "protected_pauses_after_word": [],
+ "warnings": [],
+ "source": {
+  "sha256": "7b1a90a094121964984c66afe95646ca1e4c9a99e59352dcbe66efa3738c6848",
+  "duration_s": 149.97,
+  "fps": 30.0,
+  "width": 640,
+  "height": 360,
+  "has_audio": true
+ }
+}

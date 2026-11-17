@@ -1,0 +1,41 @@
+{
+ "schema": "incubrix.timeline/1",
+ "duration_s": 50.0,
+ "segments": [
+  {
+   "src_start": 100.0,
+   "src_end": 150.0,
+   "speed": 1.0,
+   "out_start": 0.0,
+   "out_end": 50.0
+  }
+ ],
+ "captions": [
+  {
+   "id": "cap1_0",
+   "text": "silent film",
+   "words": [
+    50,
+    50
+   ],
+   "style": {},
+   "intervals": [],
+   "hidden": true
+  }
+ ],
+ "mutes": [],
+ "bleeps": [],
+ "music": null,
+ "protected_pauses_after_word": [],
+ "warnings": [
+  "caption 'silent film' hidden: its words are cut"
+ ],
+ "source": {
+  "sha256": "fa0adf39930d04205061156dbc10901f9ee400e818353c46a6f08f5f07ecb0d2",
+  "duration_s": 150.0,
+  "fps": 30.0,
+  "width": 640,
+  "height": 360,
+  "has_audio": false
+ }
+}

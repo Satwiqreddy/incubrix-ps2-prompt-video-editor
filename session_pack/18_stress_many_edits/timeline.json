@@ -1,0 +1,244 @@
+{
+ "schema": "incubrix.timeline/1",
+ "duration_s": 81.833,
+ "segments": [
+  {
+   "src_start": 86.267,
+   "src_end": 88.167,
+   "speed": 1.0,
+   "out_start": 0.0,
+   "out_end": 1.9
+  },
+  {
+   "src_start": 91.9,
+   "src_end": 95.2,
+   "speed": 1.0,
+   "out_start": 1.9,
+   "out_end": 5.2
+  },
+  {
+   "src_start": 0.0,
+   "src_end": 6.033,
+   "speed": 1.0,
+   "out_start": 5.2,
+   "out_end": 11.233
+  },
+  {
+   "src_start": 7.433,
+   "src_end": 11.567,
+   "speed": 1.0,
+   "out_start": 11.233,
+   "out_end": 15.367
+  },
+  {
+   "src_start": 15.367,
+   "src_end": 20.933,
+   "speed": 1.0,
+   "out_start": 15.367,
+   "out_end": 20.933
+  },
+  {
+   "src_start": 22.9,
+   "src_end": 27.1,
+   "speed": 1.0,
+   "out_start": 20.933,
+   "out_end": 25.133
+  },
+  {
+   "src_start": 31.8,
+   "src_end": 35.1,
+   "speed": 1.0,
+   "out_start": 25.133,
+   "out_end": 28.433
+  },
+  {
+   "src_start": 37.9,
+   "src_end": 38.5,
+   "speed": 1.0,
+   "out_start": 28.433,
+   "out_end": 29.033
+  },
+  {
+   "src_start": 41.9,
+   "src_end": 43.867,
+   "speed": 1.0,
+   "out_start": 29.033,
+   "out_end": 31.0
+  },
+  {
+   "src_start": 44.9,
+   "src_end": 49.1,
+   "speed": 1.0,
+   "out_start": 31.0,
+   "out_end": 35.2
+  },
+  {
+   "src_start": 49.1,
+   "src_end": 49.167,
+   "speed": 1.5,
+   "out_start": 35.2,
+   "out_end": 35.244
+  },
+  {
+   "src_start": 49.167,
+   "src_end": 49.167,
+   "speed": 1.0,
+   "out_start": 35.244,
+   "out_end": 35.244
+  },
+  {
+   "src_start": 51.9,
+   "src_end": 56.633,
+   "speed": 1.5,
+   "out_start": 35.244,
+   "out_end": 38.4
+  },
+  {
+   "src_start": 59.9,
+   "src_end": 65.1,
+   "speed": 1.5,
+   "out_start": 38.4,
+   "out_end": 41.867
+  },
+  {
+   "src_start": 67.9,
+   "src_end": 73.567,
+   "speed": 1.0,
+   "out_start": 41.867,
+   "out_end": 47.533
+  },
+  {
+   "src_start": 75.9,
+   "src_end": 81.1,
+   "speed": 1.0,
+   "out_start": 47.533,
+   "out_end": 52.733
+  },
+  {
+   "src_start": 83.9,
+   "src_end": 86.267,
+   "speed": 1.0,
+   "out_start": 52.733,
+   "out_end": 55.1
+  },
+  {
+   "src_start": 88.167,
+   "src_end": 88.167,
+   "speed": 1.0,
+   "out_start": 55.1,
+   "out_end": 55.1
+  },
+  {
+   "src_start": 95.2,
+   "src_end": 96.167,
+   "speed": 1.0,
+   "out_start": 55.1,
+   "out_end": 56.067
+  },
+  {
+   "src_start": 99.9,
+   "src_end": 100.5,
+   "speed": 1.0,
+   "out_start": 56.067,
+   "out_end": 56.667
+  },
+  {
+   "src_start": 107.9,
+   "src_end": 114.467,
+   "speed": 1.0,
+   "out_start": 56.667,
+   "out_end": 63.233
+  },
+  {
+   "src_start": 115.9,
+   "src_end": 121.1,
+   "speed": 1.0,
+   "out_start": 63.233,
+   "out_end": 68.433
+  },
+  {
+   "src_start": 123.9,
+   "src_end": 128.633,
+   "speed": 1.0,
+   "out_start": 68.433,
+   "out_end": 73.167
+  },
+  {
+   "src_start": 130.9,
+   "src_end": 134.733,
+   "speed": 1.0,
+   "out_start": 73.167,
+   "out_end": 77.0
+  },
+  {
+   "src_start": 138.9,
+   "src_end": 143.633,
+   "speed": 1.0,
+   "out_start": 77.0,
+   "out_end": 81.733
+  },
+  {
+   "src_start": 149.9,
+   "src_end": 150.0,
+   "speed": 1.0,
+   "out_start": 81.733,
+   "out_end": 81.833
+  }
+ ],
+ "captions": [
+  {
+   "id": "cap7_0",
+   "text": "Many cuts",
+   "words": [
+    122,
+    122
+   ],
+   "style": {},
+   "intervals": [
+    [
+     53.753,
+     54.453
+    ]
+   ],
+   "hidden": false
+  },
+  {
+   "id": "cap7_1",
+   "text": "Many cuts",
+   "words": [
+    124,
+    124
+   ],
+   "style": {},
+   "intervals": [
+    [
+     54.673,
+     55.373
+    ]
+   ],
+   "hidden": false
+  }
+ ],
+ "mutes": [
+  [
+   5.2,
+   5.6
+  ]
+ ],
+ "bleeps": [],
+ "music": {
+  "gain_db": -20,
+  "duck_db": -12,
+  "track": null
+ },
+ "protected_pauses_after_word": [],
+ "warnings": [],
+ "source": {
+  "sha256": "ba5374926fc65c7f9310eabce4f32de57b28fdf22eb788e8674d6b0d3ce29d5e",
+  "duration_s": 150.0,
+  "fps": 30.0,
+  "width": 640,
+  "height": 360,
+  "has_audio": true
+ }
+}

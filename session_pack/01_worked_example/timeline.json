@@ -1,0 +1,67 @@
+{
+ "schema": "incubrix.timeline/1",
+ "duration_s": 92.0,
+ "segments": [
+  {
+   "src_start": 30.0,
+   "src_end": 90.0,
+   "speed": 1.0,
+   "out_start": 0.0,
+   "out_end": 60.0
+  },
+  {
+   "src_start": 90.0,
+   "src_end": 108.0,
+   "speed": 2.0,
+   "out_start": 60.0,
+   "out_end": 69.0
+  },
+  {
+   "src_start": 121.0,
+   "src_end": 133.0,
+   "speed": 2.0,
+   "out_start": 69.0,
+   "out_end": 75.0
+  },
+  {
+   "src_start": 133.0,
+   "src_end": 150.0,
+   "speed": 1.0,
+   "out_start": 75.0,
+   "out_end": 92.0
+  }
+ ],
+ "captions": [
+  {
+   "id": "cap1_0",
+   "text": "Welcome!",
+   "words": [
+    63,
+    66
+   ],
+   "style": {
+    "color": "red"
+   },
+   "intervals": [
+    [
+     12.0,
+     13.78
+    ]
+   ],
+   "hidden": false
+  }
+ ],
+ "mutes": [],
+ "bleeps": [],
+ "music": null,
+ "protected_pauses_after_word": [],
+ "warnings": [],
+ "source": {
+  "sha256": "ba5374926fc65c7f9310eabce4f32de57b28fdf22eb788e8674d6b0d3ce29d5e",
+  "duration_s": 150.0,
+  "fps": 30.0,
+  "width": 640,
+  "height": 360,
+  "has_audio": true
+ }
+}

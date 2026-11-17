@@ -1,0 +1,343 @@
+{
+ "name": "08_vague_references",
+ "session_id": "ses_40c5600454",
+ "video_id": "vid_269af35c83",
+ "source_sha256": "ba5374926fc65c7f9310eabce4f32de57b28fdf22eb788e8674d6b0d3ce29d5e",
+ "source_unchanged": true,
+ "steps": [
+  {
+   "step": 1,
+   "say": "remove the boring bit",
+   "status": "needs_clarification",
+   "operations": [],
+   "summary": "Nothing applied yet.",
+   "question": "\u201cthe boring bit\u201d is subjective. Which part do you mean? (or tell me a time range or topic)",
+   "options": [
+    "the longest pause",
+    "the slowest-paced sentence"
+   ],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "271c6113a9aacd9b",
+   "duration_s": 150.0,
+   "time_policy": "current",
+   "latency_ms": 16,
+   "answer": {
+    "said": "the longest pause",
+    "status": "applied",
+    "operations": [
+     {
+      "op": "cut",
+      "src": [
+       100.4,
+       108.0
+      ]
+     }
+    ],
+    "summary": "Duration 150.00s -> 142.40s (-7.60s). you chose: the longest pause",
+    "reason": null,
+    "warnings": [],
+    "timeline_hash": "0b7c51adda5ffe7a",
+    "duration_s": 142.4
+   }
+  },
+  {
+   "step": 2,
+   "say": "make it shorter",
+   "status": "needs_clarification",
+   "operations": [],
+   "summary": "Nothing applied yet.",
+   "question": "\u201cShorter\u201d can mean several things. Which do you want?",
+   "options": [
+    "remove silences longer than 1 s",
+    "remove filler words (um, uh, filler 'like')",
+    "speed the whole video up 1.25x"
+   ],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "0b7c51adda5ffe7a",
+   "duration_s": 142.4,
+   "time_policy": "current",
+   "latency_ms": 17,
+   "answer": {
+    "said": "remove filler words",
+    "status": "applied",
+    "operations": [
+     {
+      "op": "cut",
+      "src": [
+       6.4667,
+       7.4333
+      ]
+     },
+     {
+      "op": "cut",
+      "src": [
+       29.2333,
+       30.4333
+      ]
+     }
+    ],
+    "summary": "Duration 142.40s -> 140.23s (-2.17s). you chose: remove filler words (um, uh, filler 'like')",
+    "reason": null,
+    "warnings": [],
+    "timeline_hash": "6480affe8f8e100a",
+    "duration_s": 140.233
+   }
+  },
+  {
+   "step": 3,
+   "say": "make it bigger",
+   "status": "rejected",
+   "operations": [],
+   "summary": "",
+   "question": null,
+   "options": [],
+   "reason": "there is no caption to change (add one first)",
+   "warnings": [],
+   "timeline_hash": "6480affe8f8e100a",
+   "duration_s": 140.233,
+   "time_policy": "current",
+   "latency_ms": 17
+  },
+  {
+   "step": 4,
+   "say": "add a caption 'Hi' at 0:20",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "caption",
+     "text": "Hi",
+     "words": [
+      39,
+      40
+     ]
+    }
+   ],
+   "summary": "Duration 140.23s -> 140.23s (+0.00s). caption \u201cHi\u201d attached to 2 word(s) \u201cI started\u201d (original time 0:23.0\u20130:23.9) time policy: current timeline",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "5fe6023958cd8530",
+   "duration_s": 140.233,
+   "time_policy": "current",
+   "latency_ms": 15
+  },
+  {
+   "step": 5,
+   "say": "add a caption 'Bye' at 1:30",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "caption",
+     "text": "Bye",
+     "words": [
+      129,
+      135
+     ]
+    }
+   ],
+   "summary": "Duration 140.23s -> 140.23s (+0.00s). caption \u201cBye\u201d attached to 7 word(s) \u201cAsk for feedback, listen carefully and \u2026\u201d (original time 1:32.0\u20131:35.2) time policy: current timeline",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "e5110940f83e2051",
+   "duration_s": 140.233,
+   "time_policy": "current",
+   "latency_ms": 19
+  },
+  {
+   "step": 6,
+   "say": "make that caption red",
+   "status": "needs_clarification",
+   "operations": [],
+   "summary": "Nothing applied yet.",
+   "question": "There are 2 captions. Which one do you mean by \u201cthat caption\u201d?",
+   "options": [
+    "0:22.0 \u201cHi\u201d",
+    "1:29.8 \u201cBye\u201d",
+    "all captions"
+   ],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "e5110940f83e2051",
+   "duration_s": 140.233,
+   "time_policy": "current",
+   "latency_ms": 17,
+   "answer": {
+    "said": "the last one",
+    "status": "applied",
+    "operations": [
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap4_0"
+     }
+    ],
+    "summary": "Duration 140.23s -> 140.23s (+0.00s). you chose: 1:29.8 \u201cBye\u201d",
+    "reason": null,
+    "warnings": [],
+    "timeline_hash": "74ce19c397151fa7",
+    "duration_s": 140.233
+   }
+  },
+  {
+   "step": 7,
+   "say": "render",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "render"
+    }
+   ],
+   "summary": "Render requested (see render job).",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "74ce19c397151fa7",
+   "duration_s": 140.233,
+   "time_policy": "current",
+   "latency_ms": 21,
+   "render": {
+    "job_id": "dfe7c0d07a074332",
+    "kind": "render",
+    "status": "succeeded",
+    "progress": 100,
+    "result": {
+     "video_url": "http://localhost:8000/api/v1/files/ses_40c5600454/dfe7c0d07a074332/video.mp4",
+     "timeline_url": "http://localhost:8000/api/v1/files/ses_40c5600454/dfe7c0d07a074332/timeline.json",
+     "otio_url": "http://localhost:8000/api/v1/files/ses_40c5600454/dfe7c0d07a074332/timeline.otio",
+     "timeline_hash": "74ce19c397151fa7",
+     "verification": {
+      "video_s": 140.233,
+      "audio_s": 140.23,
+      "frames": 4207,
+      "expected_s": 140.233,
+      "length_diff_frames": 0.01,
+      "av_offset_frames": 0.1
+     },
+     "manifest": {
+      "stage": "render",
+      "tool": "ffmpeg",
+      "settings": {
+       "codec": "libx264/aac",
+       "crf": 23,
+       "fps": 30.0
+      },
+      "seed": null,
+      "seconds": 15.61,
+      "cost_usd": 0.0,
+      "warnings": [],
+      "ai_generated": false,
+      "licence": "source media is the user's; built-in music is a synthetic chord pad generated by this service (no third-party audio)",
+      "music_label": null
+     }
+    },
+    "error": null,
+    "links": {
+     "self": "http://localhost:8000/api/v1/jobs/dfe7c0d07a074332"
+    },
+    "verification": {
+     "video_s": 140.233,
+     "audio_s": 140.23,
+     "frames": 4207,
+     "expected_s": 140.233,
+     "length_diff_frames": 0.01,
+     "av_offset_frames": 0.1
+    }
+   }
+  }
+ ],
+ "final_timeline_hash": "74ce19c397151fa7",
+ "final_duration_s": 140.233,
+ "final_timeline": {
+  "schema": "incubrix.timeline/1",
+  "duration_s": 140.233,
+  "segments": [
+   {
+    "src_start": 0.0,
+    "src_end": 6.467,
+    "speed": 1.0,
+    "out_start": 0.0,
+    "out_end": 6.467
+   },
+   {
+    "src_start": 7.433,
+    "src_end": 29.233,
+    "speed": 1.0,
+    "out_start": 6.467,
+    "out_end": 28.267
+   },
+   {
+    "src_start": 30.433,
+    "src_end": 100.4,
+    "speed": 1.0,
+    "out_start": 28.267,
+    "out_end": 98.233
+   },
+   {
+    "src_start": 108.0,
+    "src_end": 150.0,
+    "speed": 1.0,
+    "out_start": 98.233,
+    "out_end": 140.233
+   }
+  ],
+  "captions": [
+   {
+    "id": "cap3_0",
+    "text": "Hi",
+    "words": [
+     39,
+     40
+    ],
+    "style": {},
+    "intervals": [
+     [
+      22.033,
+      22.893
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap4_0",
+    "text": "Bye",
+    "words": [
+     129,
+     135
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      89.833,
+      92.993
+     ]
+    ],
+    "hidden": false
+   }
+  ],
+  "mutes": [],
+  "bleeps": [],
+  "music": null,
+  "protected_pauses_after_word": [],
+  "warnings": [],
+  "source": {
+   "sha256": "ba5374926fc65c7f9310eabce4f32de57b28fdf22eb788e8674d6b0d3ce29d5e",
+   "duration_s": 150.0,
+   "fps": 30.0,
+   "width": 640,
+   "height": 360,
+   "has_audio": true
+  }
+ },
+ "final_video": "final.mp4",
+ "expectation_failures": []
+}

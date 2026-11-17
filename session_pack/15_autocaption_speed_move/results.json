@@ -1,0 +1,1211 @@
+{
+ "name": "15_autocaption_speed_move",
+ "session_id": "ses_b637394a35",
+ "video_id": "vid_e06f6e85ff",
+ "source_sha256": "ba5374926fc65c7f9310eabce4f32de57b28fdf22eb788e8674d6b0d3ce29d5e",
+ "source_unchanged": true,
+ "steps": [
+  {
+   "step": 1,
+   "say": "auto-caption the whole video",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "autocaption"
+    }
+   ],
+   "summary": "Duration 150.00s -> 150.00s (+0.00s).",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "9dfe818b275fe7c8",
+   "duration_s": 150.0,
+   "time_policy": "current",
+   "latency_ms": 16
+  },
+  {
+   "step": 2,
+   "say": "speed up from 1:00 to 1:30 by 2x",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "speed",
+     "src": [
+      60.0,
+      90.0
+     ],
+     "factor": 2.0
+    }
+   ],
+   "summary": "Duration 150.00s -> 135.00s (-15.00s). time policy: current timeline",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "f8392b734e777e6d",
+   "duration_s": 135.0,
+   "time_policy": "current",
+   "latency_ms": 21
+  },
+  {
+   "step": 3,
+   "say": "move 0:40-0:50 to the end",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "move",
+     "src": [
+      40.0,
+      50.0
+     ],
+     "to": "end"
+    }
+   ],
+   "summary": "Duration 135.00s -> 135.00s (+0.00s). time policy: current timeline",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "2d6260cb6c1ca738",
+   "duration_s": 135.0,
+   "time_policy": "current",
+   "latency_ms": 17
+  },
+  {
+   "step": 4,
+   "say": "make that caption red",
+   "status": "needs_clarification",
+   "operations": [],
+   "summary": "Nothing applied yet.",
+   "question": "There are 39 captions. Which one do you mean by \u201cthat caption\u201d?",
+   "options": [
+    "1:42.2 \u201cthey matter too.\u201d",
+    "1:46.0 \u201cThanks again for watching, thanks for the\u201d",
+    "1:49.2 \u201ccomments.\u201d",
+    "1:54.0 \u201cSubscribe if you liked it, and thanks\u201d",
+    "1:57.2 \u201cone last time.\u201d",
+    "all captions"
+   ],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "2d6260cb6c1ca738",
+   "duration_s": 135.0,
+   "time_policy": "current",
+   "latency_ms": 30,
+   "answer": {
+    "said": "all captions",
+    "status": "applied",
+    "operations": [
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a0"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a1"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a2"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a3"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a4"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a5"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a6"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a7"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a8"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a9"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a10"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a11"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a12"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a13"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a14"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a15"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a16"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a17"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a18"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a19"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a20"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a21"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a22"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a23"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a24"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a25"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a26"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a27"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a28"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a29"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a30"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a31"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a32"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a33"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a34"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a35"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a36"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a37"
+     },
+     {
+      "op": "style",
+      "props": {
+       "color": "red"
+      },
+      "target": "cap1_a38"
+     }
+    ],
+    "summary": "Duration 135.00s -> 135.00s (+0.00s). you chose: all captions",
+    "reason": null,
+    "warnings": [],
+    "timeline_hash": "d85292446ca8b0dc",
+    "duration_s": 135.0
+   }
+  },
+  {
+   "step": 5,
+   "say": "render",
+   "status": "applied",
+   "operations": [
+    {
+     "op": "render"
+    }
+   ],
+   "summary": "Render requested (see render job).",
+   "question": null,
+   "options": [],
+   "reason": null,
+   "warnings": [],
+   "timeline_hash": "d85292446ca8b0dc",
+   "duration_s": 135.0,
+   "time_policy": "current",
+   "latency_ms": 34,
+   "render": {
+    "job_id": "257c4b73dea3494e",
+    "kind": "render",
+    "status": "succeeded",
+    "progress": 100,
+    "result": {
+     "video_url": "http://localhost:8000/api/v1/files/ses_b637394a35/257c4b73dea3494e/video.mp4",
+     "timeline_url": "http://localhost:8000/api/v1/files/ses_b637394a35/257c4b73dea3494e/timeline.json",
+     "otio_url": "http://localhost:8000/api/v1/files/ses_b637394a35/257c4b73dea3494e/timeline.otio",
+     "timeline_hash": "d85292446ca8b0dc",
+     "verification": {
+      "video_s": 135.0,
+      "audio_s": 134.98,
+      "frames": 4050,
+      "expected_s": 135.0,
+      "length_diff_frames": 0.0,
+      "av_offset_frames": 0.6
+     },
+     "manifest": {
+      "stage": "render",
+      "tool": "ffmpeg",
+      "settings": {
+       "codec": "libx264/aac",
+       "crf": 23,
+       "fps": 30.0
+      },
+      "seed": null,
+      "seconds": 16.04,
+      "cost_usd": 0.0,
+      "warnings": [],
+      "ai_generated": false,
+      "licence": "source media is the user's; built-in music is a synthetic chord pad generated by this service (no third-party audio)",
+      "music_label": null
+     }
+    },
+    "error": null,
+    "links": {
+     "self": "http://localhost:8000/api/v1/jobs/257c4b73dea3494e"
+    },
+    "verification": {
+     "video_s": 135.0,
+     "audio_s": 134.98,
+     "frames": 4050,
+     "expected_s": 135.0,
+     "length_diff_frames": 0.0,
+     "av_offset_frames": 0.6
+    }
+   }
+  }
+ ],
+ "final_timeline_hash": "d85292446ca8b0dc",
+ "final_duration_s": 135.0,
+ "final_timeline": {
+  "schema": "incubrix.timeline/1",
+  "duration_s": 135.0,
+  "segments": [
+   {
+    "src_start": 0.0,
+    "src_end": 40.0,
+    "speed": 1.0,
+    "out_start": 0.0,
+    "out_end": 40.0
+   },
+   {
+    "src_start": 50.0,
+    "src_end": 60.0,
+    "speed": 1.0,
+    "out_start": 40.0,
+    "out_end": 50.0
+   },
+   {
+    "src_start": 60.0,
+    "src_end": 90.0,
+    "speed": 2.0,
+    "out_start": 50.0,
+    "out_end": 65.0
+   },
+   {
+    "src_start": 90.0,
+    "src_end": 150.0,
+    "speed": 1.0,
+    "out_start": 65.0,
+    "out_end": 125.0
+   },
+   {
+    "src_start": 40.0,
+    "src_end": 50.0,
+    "speed": 1.0,
+    "out_start": 125.0,
+    "out_end": 135.0
+   }
+  ],
+  "captions": [
+   {
+    "id": "cap1_a0",
+    "text": "Hello and thanks for joining this short",
+    "words": [
+     0,
+     6
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      0.0,
+      3.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a1",
+    "text": "talk about building a small business.",
+    "words": [
+     7,
+     12
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      3.22,
+      5.92
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a2",
+    "text": "Um today we will cover three things,",
+    "words": [
+     13,
+     19
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      7.0,
+      10.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a3",
+    "text": "planning, pricing and growth.",
+    "words": [
+     20,
+     23
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      10.22,
+      12.0
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a4",
+    "text": "This is a real example, and it",
+    "words": [
+     24,
+     30
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      14.0,
+      17.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a5",
+    "text": "is quite boring honestly, but stay with",
+    "words": [
+     31,
+     37
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      17.22,
+      20.38
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a6",
+    "text": "me.",
+    "words": [
+     38,
+     38
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      20.44,
+      21.14
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a7",
+    "text": "I started with nothing but a laptop",
+    "words": [
+     39,
+     45
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      23.0,
+      26.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a8",
+    "text": "and a lot of coffee.",
+    "words": [
+     46,
+     50
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      26.22,
+      28.46
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a9",
+    "text": "Uh the first lesson is to start",
+    "words": [
+     51,
+     57
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      30.0,
+      33.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a10",
+    "text": "small and test everything.",
+    "words": [
+     58,
+     61
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      33.22,
+      35.0
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a11",
+    "text": "Anyway.",
+    "words": [
+     62,
+     62
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      38.0,
+      38.7
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a12",
+    "text": "Welcome to the channel.",
+    "words": [
+     63,
+     66
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      127.0,
+      128.78
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a13",
+    "text": "Let us begin with planning because planning",
+    "words": [
+     67,
+     73
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      130.0,
+      133.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a14",
+    "text": "saves money.",
+    "words": [
+     74,
+     75
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      133.22,
+      134.08
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a15",
+    "text": "Write down who your customers are and",
+    "words": [
+     76,
+     82
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      42.0,
+      45.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a16",
+    "text": "what they need.",
+    "words": [
+     83,
+     85
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      45.22,
+      46.54
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a17",
+    "text": "Now the pricing.",
+    "words": [
+     86,
+     88
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      50.0,
+      50.7
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a18",
+    "text": "Pricing is the first thing people ask",
+    "words": [
+     89,
+     95
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      50.69,
+      52.27
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a19",
+    "text": "about.",
+    "words": [
+     96,
+     96
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      52.3,
+      53.0
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a20",
+    "text": "Your cost should cover your time, your",
+    "words": [
+     97,
+     103
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      54.0,
+      55.58
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a21",
+    "text": "tools and a fair profit.",
+    "words": [
+     104,
+     108
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      55.61,
+      56.73
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a22",
+    "text": "I like to keep things simple, like",
+    "words": [
+     109,
+     115
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      58.0,
+      59.58
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a23",
+    "text": "a flat monthly fee.",
+    "words": [
+     116,
+     119
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      59.61,
+      60.5
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a24",
+    "text": "Next is growth, and growth comes from",
+    "words": [
+     120,
+     126
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      62.0,
+      63.58
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a25",
+    "text": "happy customers.",
+    "words": [
+     127,
+     128
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      63.61,
+      64.31
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a26",
+    "text": "Ask for feedback, listen carefully and improve",
+    "words": [
+     129,
+     135
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      67.0,
+      70.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a27",
+    "text": "every week.",
+    "words": [
+     136,
+     137
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      70.22,
+      71.08
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a28",
+    "text": "Thanks.",
+    "words": [
+     138,
+     138
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      75.0,
+      75.7
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a29",
+    "text": "Back to pricing for a moment, because",
+    "words": [
+     139,
+     145
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      83.0,
+      86.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a30",
+    "text": "the price should never be a surprise.",
+    "words": [
+     146,
+     152
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      86.22,
+      89.38
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a31",
+    "text": "Show the pricing page clearly and keep",
+    "words": [
+     153,
+     159
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      91.0,
+      94.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a32",
+    "text": "the plan names honest.",
+    "words": [
+     160,
+     163
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      94.22,
+      96.0
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a33",
+    "text": "Darn, I almost forgot to mention taxes,",
+    "words": [
+     164,
+     170
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      99.0,
+      102.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a34",
+    "text": "they matter too.",
+    "words": [
+     171,
+     173
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      102.22,
+      103.54
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a35",
+    "text": "Thanks again for watching, thanks for the",
+    "words": [
+     174,
+     180
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      106.0,
+      109.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a36",
+    "text": "comments.",
+    "words": [
+     181,
+     181
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      109.22,
+      109.92
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a37",
+    "text": "Subscribe if you liked it, and thanks",
+    "words": [
+     182,
+     188
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      114.0,
+      117.16
+     ]
+    ],
+    "hidden": false
+   },
+   {
+    "id": "cap1_a38",
+    "text": "one last time.",
+    "words": [
+     189,
+     191
+    ],
+    "style": {
+     "color": "red"
+    },
+    "intervals": [
+     [
+      117.22,
+      118.54
+     ]
+    ],
+    "hidden": false
+   }
+  ],
+  "mutes": [],
+  "bleeps": [],
+  "music": null,
+  "protected_pauses_after_word": [],
+  "warnings": [],
+  "source": {
+   "sha256": "ba5374926fc65c7f9310eabce4f32de57b28fdf22eb788e8674d6b0d3ce29d5e",
+   "duration_s": 150.0,
+   "fps": 30.0,
+   "width": 640,
+   "height": 360,
+   "has_audio": true
+  }
+ },
+ "final_video": "final.mp4",
+ "expectation_failures": []
+}
