@@ -1,5 +1,7 @@
 # Prompt-Based Video Editing Engine (IncuBrix Assessment 2)
 
+Repository: https://github.com/Satwiqreddy/incubrix-ps2-prompt-video-editor (private) · Deploy: `DEPLOY.md` · Evidence for the Submission Form: `EVIDENCE.md`
+
 Edit a video by typing. `"cut the first 30 seconds"`, `"remove the part about pricing"`, `"add a caption 'Welcome!' when I say welcome to the channel"`, `"undo"`.
 Every instruction gets exactly one answer: **applied**, **needs_clarification** (a specific question with options) or **rejected** (with the reason).
 
@@ -17,16 +19,19 @@ FastAPI (main.py): jobs · Idempotency-Key · JSON errors · logs · MinIO/S3 ·
 ## Run it (under 10 commands)
 
 ```bash
-pip install -r requirements.txt          # Python 3.11+; ffmpeg on PATH (or pip's imageio-ffmpeg is picked up automatically)
-python -m tools.fixtures fixtures        # our own test videos (tone-burst "speech" + testsrc2) + word transcripts
-uvicorn app.main:app --port 8000         # API + docs at http://localhost:8000/docs
+git clone https://github.com/Satwiqreddy/incubrix-ps2-prompt-video-editor.git && cd incubrix-ps2-prompt-video-editor
+pip install -r requirements.txt          # Python 3.11+; ffmpeg on PATH (pip's imageio-ffmpeg is picked up automatically)
+python -m tools.fixtures fixtures        # our own test videos + word transcripts (a few seconds each, nothing is downloaded)
+python -m tools.make_sessions            # writes sessions/*.yaml and the low-confidence transcript
+uvicorn app.main:app --port 8000         # web page at http://localhost:8000/  ·  API docs at /docs
 python -m app.runner sessions/01_worked_example.yaml -o results --api http://localhost:8000
 ```
-Docker: `docker compose up` (API :8000 + MinIO :9000/:9001). All tests, no API keys: `docker compose run --rm tests`.
-Without a server: `python -m app.runner sessions -o results` runs every session in-process.
-**Tests:** `python -m pytest -q` (135 tests, ~2 min; the scenario suite alone is 1 s: `pytest tests/test_scenarios.py`).
-
-**Real-sounding speech test (Windows):** `python -m tools.make_speech_fixture fixtures` → `fixtures/real_speech.mp4` + `.words.json` (two Windows system voices; word timings from the synthesiser). Session `sessions_windows/19_real_speech.yaml` (kept out of the default folder because the clip is not committed). Local testing only (TTS licence unverified).
+* **Web page:** open `/`, click a sample (or **Watch a demo**), type instructions; **Guide** explains each area.
+* **Docker:** `docker compose up` (API :8000 + MinIO :9000/:9001). All tests, no API keys: `docker compose run --rm tests`.
+* **No server:** `python -m app.runner sessions -o results` runs every session in-process.
+* **Tests:** `python -m pytest -q` (135 tests, about 3 minutes; the 78 scenarios alone: `pytest tests/test_scenarios.py`, 1 s).
+* Transcripts: upload a video alone and the service transcribes it with Whisper (`base.en`, downloads on first use; the Docker image has it built in). Or upload a `words.json` with it.
+* **Real-sounding speech clip (Windows):** `python -m tools.make_speech_fixture fixtures` → `fixtures/real_speech.mp4`; session `sessions_windows/19_real_speech.yaml`. Local testing only (Windows voice licence unverified, not committed).
 
 ## API (`openapi.yaml`, all under `/api/v1`)
 
