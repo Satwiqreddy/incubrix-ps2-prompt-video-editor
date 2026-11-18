@@ -1,23 +1,23 @@
-# docker compose up                      -> API on :8000 (docs at /docs) + MinIO (S3) on :9000/:9001, SQLite state in a volume
-# docker compose run --rm tests          -> ALL tests with no API keys: unit + integration (HTTP) + render e2e + 18 scripted sessions
+# docker compose up                      -> API + web page on :8000 (docs at /docs) and a local S3-compatible store on :9000, SQLite state in a volume
+# docker compose --profile test run --rm tests   -> ALL tests with no API keys: unit + integration (HTTP) + render e2e + scripted sessions
+#
+# The S3 store is `moto` (Apache-2.0) running from OUR image, so there is no third-party image to disappear
+# (the public minio/minio image was removed from Docker Hub). It keeps files in memory: fine for local runs and demos.
+# For real storage point S3_ENDPOINT / keys at any S3-compatible service (AWS S3, Cloudflare R2, Garage, ...).
 services:
-  minio:
-    image: minio/minio:latest
-    command: server /data --console-address ":9001"
-    environment:
-      MINIO_ROOT_USER: ${S3_ACCESS_KEY:-minioadmin}
-      MINIO_ROOT_PASSWORD: ${S3_SECRET_KEY:-minioadmin}
-    ports: ["9000:9000", "9001:9001"]
-    volumes: ["minio:/data"]
+  s3:
+    build: .
+    command: python -m moto.server -H 0.0.0.0 -p 9000
+    ports: ["9000:9000"]
     healthcheck:
-      test: ["CMD", "mc", "ready", "local"]
+      test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://localhost:9000/moto-api/')"]
       interval: 5s
       retries: 12
 
   api:
     build: .
     depends_on:
-      minio: {condition: service_healthy}
+      s3: {condition: service_healthy}
     ports: ["8000:8000"]
     volumes: ["state:/data"]
     environment:
@@ -29,11 +29,11 @@ services:
       NLU: ${NLU:-rules}
       LLM_API_KEY: ${LLM_API_KEY:-}
       STORAGE: s3
-      S3_ENDPOINT: http://minio:9000
+      S3_ENDPOINT: http://s3:9000
       S3_PUBLIC_ENDPOINT: ${S3_PUBLIC_ENDPOINT:-http://localhost:9000}
       S3_BUCKET: ${S3_BUCKET:-incubrix-editor}
-      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-minioadmin}
-      S3_SECRET_KEY: ${S3_SECRET_KEY:-minioadmin}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-local-key}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-local-secret}
       CALLBACK_SECRET: ${CALLBACK_SECRET:-change-me}
       FONT_PATH: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
 
@@ -46,4 +46,4 @@ services:
       && pytest -q -p no:cacheprovider
       && python -m app.runner sessions -o /tmp/results"
 
-volumes: {state: {}, minio: {}}
+volumes: {state: {}}

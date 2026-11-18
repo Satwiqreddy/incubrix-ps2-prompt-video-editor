@@ -1,4 +1,4 @@
-"""SQLite document store + file storage (local disk or S3/MinIO)."""
+"""SQLite document store + file storage (local disk or any S3-compatible service)."""
 import json, os, shutil, sqlite3, threading
 from .config import cfg, env
 
@@ -54,7 +54,7 @@ def _s3(endpoint=None):
 
 
 def save_output(local_path, key):
-    """Copy a produced file to storage; return a download URL (S3/MinIO presigned for 7 days, or a local /files URL)."""
+    """Copy a produced file to storage; return a download URL (S3 presigned for 7 days, or a local /files URL)."""
     if cfg.storage == "s3":
         c, b = _s3(), env("S3_BUCKET", "incubrix-editor")
         try:

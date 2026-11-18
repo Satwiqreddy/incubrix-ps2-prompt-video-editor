@@ -11,4 +11,4 @@ numpy>=1.26
 # bundled ffmpeg binary (local dev only; Docker uses apt ffmpeg)
 imageio-ffmpeg>=0.5
 faster-whisper>=1.0   # speech-to-text (MIT); model weights download on first use
-moto[s3]>=5
+moto[s3,server]>=5   # tests + the local S3 service in docker compose
