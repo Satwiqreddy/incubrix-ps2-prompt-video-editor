@@ -3,6 +3,13 @@
 The demo is one Docker container (API + web page). It needs **2 GB RAM or more** (the speech model uses about 1 GB), a **10 GB disk** and Docker.
 Samples and the Whisper model are built into the image, so a reviewer sees a working page right away.
 
+## Current deployment (what is actually running)
+* Google Cloud Compute Engine VM `demo`, region asia-south1-c, e2-medium (2 vCPU, 4 GB), Ubuntu 22.04, public address http://8.231.91.61/
+* Code copied from a clean clone, Python 3.10 virtualenv, ffmpeg from apt, Whisper `base.en` pre-downloaded.
+* Started with: `sudo HF_HOME=/home/<user>/.cache/huggingface PUBLIC_URL=http://<ip> nohup venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 80`
+* No access token (demo is open); `RATE_LIMIT_PER_MIN` defaults to 120 per IP. Paid for from the Google Cloud free-trial credit.
+* After a VM reboot the app must be started again with the command above.
+
 ## 1. A small Linux server (recommended)
 ```bash
 curl -fsSL https://get.docker.com | sh
