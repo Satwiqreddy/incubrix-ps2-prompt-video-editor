@@ -8,3 +8,5 @@ __pycache__/
 .env
 fixtures/real_speech.*
 *.tar.gz
+venv/
+.venv/
