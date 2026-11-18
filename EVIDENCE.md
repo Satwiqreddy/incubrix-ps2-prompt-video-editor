@@ -13,7 +13,7 @@ Run first: `python -m tools.fixtures fixtures && python -m pytest -q && python -
 | 5 Render matches timeline | Yes | `metrics.json` render_accuracy (≤0.9 frame A/V, ≤0.9 frame length); `tests/test_media.py` |
 | 6 All operations incl. undo/redo/restore | Yes | sessions 01, 06, 17; scenarios `undo_*`, `redo*`, `restore_*` |
 | 7 Clear time policy | Yes | every time-based answer says "time policy: current timeline"; "in the original" supported (`04_time_policy_and_formats`) |
-| 8 Integration Standard + runner + live demo | Partial | runner: `app/runner.py`, sessions pass. **Live demo: NOT deployed yet (submitter must deploy, see below)** |
+| 8 Integration Standard + runner + live demo | Yes (compose untested) | runner: `app/runner.py`, sessions pass; live demo at http://8.231.91.61/; `docker compose` itself has not been run by the submitter yet |
 
 ## Levels
 | Level / item | Status | Proof |
@@ -44,15 +44,17 @@ Partial: Whisper `base.en` transcribes uploads without a transcript file (checke
 Scenarios in `tests/test_scenarios.py` + sessions 02–08, 11–14, 17 (all 8 hard-case bullets of the brief are covered; two-speaker swap/overlap only as warnings).
 
 ## Delivered
+* **Live demo:** http://8.231.91.61/ — Google Cloud VM (e2-medium, Ubuntu 22.04, 2 vCPU / 4 GB), plain Python + ffmpeg (no Docker on the demo host), no access token, rate limit on. Checked: the scripted demo, an upload without a transcript file (Whisper), and access from a phone on mobile data. Cold start: none; first transcription takes about as long as the video.
+* GitHub Actions (`tests` workflow) passed on every push so far on a clean Ubuntu runner: pytest (135 tests) + all scripted sessions.
 * Private GitHub repository `Satwiqreddy/incubrix-ps2-prompt-video-editor`, 28+ commits under the submitter's own name (real dates, no backdating).
 * `DEPLOY.md` (live demo), `README.md`, `openapi.yaml`, `REPORT.md`, `SOURCES.md`, `AI_USE.md`, `TIMELINE.md` + `schema/`, session pack (`session_pack/*/results.json`, `timeline.json`), metrics and benchmark JSON files, 135 tests.
 
 ## Still to do by the submitter (cannot be done from the code)
 1. Fill the Excel form from this file (the template was not provided).
 2. Give `techteam@incubrix.com` reviewer access: GitHub needs a username for API invites, so use Settings → Collaborators → Add people (an email is accepted there), or ask IncuBrix for their GitHub username.
-3. Deploy the live demo (`DEPLOY.md`), put the URL and token in the form, keep it up until results.
+3. Keep the live demo up until results (check it daily from a phone); put the URL in the form and say there is no token.
 4. Record the ≤ 8-minute unedited demo video (`DEMO_SCRIPT.md`).
-5. Run `docker compose up` and `docker compose run --rm tests` once on a machine with Docker (never run here), and push once so GitHub Actions runs (`.github/workflows/ci.yml`).
+5. Run `docker compose up` and `docker compose run --rm tests` once on a machine with Docker (never run here). GitHub Actions has already passed.
 6. Test one real recording of yourself (video only, let Whisper transcribe) and add it to the evidence.
 7. Rewrite `AI_USE.md` in your own words.
 8. Be ready to explain and change every file in the live session.
