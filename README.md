@@ -1,6 +1,6 @@
 # Prompt-Based Video Editing Engine (IncuBrix Assessment 2)
 
-Repository: https://github.com/Satwiqreddy/incubrix-ps2-prompt-video-editor (private) · Deploy: `DEPLOY.md` · Evidence for the Submission Form: `EVIDENCE.md`
+**Live demo: http://8.231.91.61/** (no access token; web page + API docs at `http://8.231.91.61/docs`) · Repository: https://github.com/Satwiqreddy/incubrix-ps2-prompt-video-editor (private) · Deploy: `DEPLOY.md` · Evidence for the Submission Form: `EVIDENCE.md`
 
 Edit a video by typing. `"cut the first 30 seconds"`, `"remove the part about pricing"`, `"add a caption 'Welcome!' when I say welcome to the channel"`, `"undo"`.
 Every instruction gets exactly one answer: **applied**, **needs_clarification** (a specific question with options) or **rejected** (with the reason).
