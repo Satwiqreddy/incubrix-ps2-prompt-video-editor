@@ -5,8 +5,8 @@
 | Python 3, standard library | everything | PSF |
 | FastAPI / Starlette / Uvicorn / Pydantic | HTTP API | MIT / BSD / BSD / MIT |
 | httpx, python-multipart, PyYAML, jsonschema | I/O, config, schema checks | BSD / Apache-2.0 / MIT / MIT |
-| boto3 / botocore | S3 / MinIO adapter | Apache-2.0 |
-| MinIO (docker image `minio/minio`) | S3-compatible storage in compose | **AGPL-3.0** — run as a separate service for local storage only, not shipped or linked in our code; swap for any S3 |
+| boto3 / botocore | S3 adapter | Apache-2.0 |
+| moto server (`python -m moto.server`, in our own image) | local S3-compatible store for `docker compose` | Apache-2.0. (MinIO was dropped: its public Docker image was removed, and it is AGPL.) Swap `S3_ENDPOINT` for any S3-compatible service |
 | ffmpeg (apt in Docker; `imageio-ffmpeg` static build for local dev) | probe + render, invoked as a **separate process**, never linked | GPL builds (libx264); output media is not affected. Replace with an LGPL build if the product must not ship GPL binaries |
 | numpy | tests/fixtures only | BSD |
 | pytest, moto | tests only | MIT / Apache-2.0 |

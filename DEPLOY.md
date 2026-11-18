@@ -23,7 +23,7 @@ docker run -d --name demo --restart unless-stopped -p 8000:8000 -v demo-data:/da
   cutting-room
 curl http://localhost:8000/api/v1/ready          # expect {"status":"ready",...}
 ```
-`PUBLIC_URL` must be the address reviewers use; download links are built from it. The container uses local disk for outputs (`STORAGE=local`), so MinIO is not needed for the demo.
+`PUBLIC_URL` must be the address reviewers use; download links are built from it. The container uses local disk for outputs (`STORAGE=local`), so an S3 store is not needed for the demo.
 
 HTTPS with a domain pointed at the server:
 ```bash
@@ -34,8 +34,8 @@ docker run -d --name caddy --restart unless-stopped -p 80:80 -p 443:443 -v caddy
 ## 2. Fly.io / Railway
 Deploy from the Dockerfile, choose a 2 GB machine, mount a volume at `/data`, set the same environment variables.
 
-## 3. Full stack with MinIO (local or VM)
-`docker compose up` starts the API on :8000 and MinIO on :9000/:9001. All tests with no API keys: `docker compose run --rm tests`.
+## 3. Full stack with the local S3 store (local or VM)
+`docker compose up` starts the API on :8000 and a local S3-compatible store (moto, from our own image) on :9000. All tests with no API keys: `docker compose run --rm tests`.
 
 ## What to tell the reviewers
 * URL, and the access token (paste it under **Options** on the page; the API takes `Authorization: Bearer <token>`).

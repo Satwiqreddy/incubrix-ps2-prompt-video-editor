@@ -13,7 +13,7 @@ text ──► nlu.py (words → intents; rules by default, optional LLM) ──
                                    timeline.py  fold(history) → segments + overlays → hash   (deterministic, no model)
                                                                         │
                                    media.py  ffmpeg render of the derived timeline (separate step, original never touched)
-FastAPI (main.py): jobs · Idempotency-Key · JSON errors · logs · MinIO/S3 · /api/v1    runner.py: scripted sessions via HTTP
+FastAPI (main.py): jobs · Idempotency-Key · JSON errors · logs · S3-compatible storage · /api/v1    runner.py: scripted sessions via HTTP
 ```
 
 ## Run it (under 10 commands)
@@ -27,7 +27,7 @@ uvicorn app.main:app --port 8000         # web page at http://localhost:8000/  �
 python -m app.runner sessions/01_worked_example.yaml -o results --api http://localhost:8000
 ```
 * **Web page:** open `/`, click a sample (or **Watch a demo**), type instructions; **Guide** explains each area.
-* **Docker:** `docker compose up` (API :8000 + MinIO :9000/:9001). All tests, no API keys: `docker compose run --rm tests`.
+* **Docker:** `docker compose up` (API :8000 + a local S3-compatible store :9000). All tests, no API keys: `docker compose run --rm tests`.
 * **No server:** `python -m app.runner sessions -o results` runs every session in-process.
 * **Tests:** `python -m pytest -q` (135 tests, about 3 minutes; the 78 scenarios alone: `pytest tests/test_scenarios.py`, 1 s).
 * Transcripts: upload a video alone and the service transcribes it with Whisper (`base.en`, downloads on first use; the Docker image has it built in). Or upload a `words.json` with it.
