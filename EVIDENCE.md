@@ -13,7 +13,7 @@ Run first: `python -m tools.fixtures fixtures && python -m pytest -q && python -
 | 5 Render matches timeline | Yes | `metrics.json` render_accuracy (≤0.9 frame A/V, ≤0.9 frame length); `tests/test_media.py` |
 | 6 All operations incl. undo/redo/restore | Yes | sessions 01, 06, 17; scenarios `undo_*`, `redo*`, `restore_*` |
 | 7 Clear time policy | Yes | every time-based answer says "time policy: current timeline"; "in the original" supported (`04_time_policy_and_formats`) |
-| 8 Integration Standard + runner + live demo | Yes (compose untested) | runner: `app/runner.py`, sessions pass; live demo at http://8.231.91.61/; `docker compose` itself has not been run by the submitter yet |
+| 8 Integration Standard + runner + live demo | Yes | runner: `app/runner.py`, sessions pass; live demo at http://8.231.91.61/; Verified on 2026-11-18 in Google Cloud Shell (Docker, clean clone of this repo): `docker compose up --build -d` started the API with `storage: s3` (`/api/v1/ready` = ready), and `docker compose --profile test run --rm tests` finished with **135 passed, 1 skipped** (the skipped test needs the Windows-only real-speech clip) followed by all 18 scripted sessions `ok` including renders |
 
 ## Levels
 | Level / item | Status | Proof |
@@ -32,7 +32,7 @@ Run first: `python -m tools.fixtures fixtures && python -m pytest -q && python -
 | Out: ≥40 scripted scenarios in CI | Yes | `tests/test_scenarios.py` (77 cases), `.github/workflows/ci.yml` (not yet run on GitHub) |
 
 ## Integration Standard
-1 compose+tests: **Partial** (written, not run here; tests run via `pytest`) · 2 openapi: Yes (`tests/test_api.py::test_openapi_matches_running_app`) · 3 jobs/callback HMAC: Yes (`test_callback_signature`) · 4 idempotency: Yes · 5 errors: Yes (`test_error_shape`) · 6 config: Yes (`.env.example`) · 7 files in/out + S3: Yes (`tests/test_s3.py` fake S3) · 8 logs/health/correlation id: Yes · 9 manifest: Yes (render job result) · 10 batch runner: Yes.
+1 compose+tests: **Yes** (Verified on 2026-11-18 in Google Cloud Shell (Docker, clean clone of this repo): `docker compose up --build -d` started the API with `storage: s3` (`/api/v1/ready` = ready), and `docker compose --profile test run --rm tests` finished with **135 passed, 1 skipped** (the skipped test needs the Windows-only real-speech clip) followed by all 18 scripted sessions `ok` including renders) · 2 openapi: Yes (`tests/test_api.py::test_openapi_matches_running_app`) · 3 jobs/callback HMAC: Yes (`test_callback_signature`) · 4 idempotency: Yes · 5 errors: Yes (`test_error_shape`) · 6 config: Yes (`.env.example`) · 7 files in/out + S3: Yes (`tests/test_s3.py` fake S3) · 8 logs/health/correlation id: Yes · 9 manifest: Yes (render job result) · 10 batch runner: Yes.
 
 ## Metrics tab
 `metrics.json`, `bench_results.json`, REPORT.md table. Word-clipping figure is an exact transcript check, **not** a listening test of 20 cuts.
@@ -54,7 +54,7 @@ Scenarios in `tests/test_scenarios.py` + sessions 02–08, 11–14, 17 (all 8 ha
 2. Give `techteam@incubrix.com` reviewer access: GitHub needs a username for API invites, so use Settings → Collaborators → Add people (an email is accepted there), or ask IncuBrix for their GitHub username.
 3. Keep the live demo up until results (check it daily from a phone); put the URL in the form and say there is no token.
 4. Record the ≤ 8-minute unedited demo video (`DEMO_SCRIPT.md`).
-5. Run `docker compose up` and `docker compose run --rm tests` once on a machine with Docker (never run here). GitHub Actions has already passed.
+5. (Done) `docker compose` verified in Cloud Shell, GitHub Actions passed. Re-run `docker compose up` before submitting if you change code.
 6. Test one real recording of yourself (video only, let Whisper transcribe) and add it to the evidence.
 7. Rewrite `AI_USE.md` in your own words.
 8. Be ready to explain and change every file in the live session.

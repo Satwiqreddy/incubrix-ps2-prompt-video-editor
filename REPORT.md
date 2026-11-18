@@ -30,7 +30,7 @@
 * No real human speech/face was used: fixtures are synthetic (tone bursts + testsrc2). Whisper (`base.en`) transcription was checked on one clip of computer-voiced speech only (125/125 words, 22 s for 61 s of audio on CPU); it is not in the automated tests. Transcript errors are handled by confidence flags (low-confidence words are asked about) and fuzzy phrase matching.
 * Speakers: from the transcript file, or (with Whisper) estimated from voice pitch: 124/125 words right on a two-voice clip, a one-voice clip is not split. Voices of similar pitch merge. Overlap/label-swap detection warns (unit tested) but does not repair.
 * Topic search is lexical (+stemming + small synonym table), so paraphrases outside the table are "not found".
-* `docker compose` untested here (no Docker). The live demo URL, GitHub repo, demo video and Submission Form still have to be produced by the submitter.
+* `docker compose` was run once, in Google Cloud Shell, not on the development laptop: API ready with S3 storage, 135 tests passed (1 skipped), 18 sessions ok. The live demo itself runs without Docker (plain Python on a VM). The Submission Form, demo video and reviewer invite are the submitter's to produce.
 * Overlapping speed changes: a later `speed` on a range *sets* (not multiplies) the factor for the overlapped part; documented rule, little tested.
 * OTIO export: opened successfully with OpenTimelineIO 0.18.1 (tracks, clip ranges, speed effect); not opened in a desktop editor.
 * 60-minute: a real 60-minute MP4 (160x90, silent noise) with a synthetic transcript was edited through the HTTP API (median 143 ms, max 254 ms, 30/30 < 3 s); it was not rendered, and rendering time for 60 minutes was not measured.
